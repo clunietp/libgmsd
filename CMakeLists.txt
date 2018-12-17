@@ -7,7 +7,7 @@ set (BIN_NAME gmsd)
 set (CMAKE_BUILD_TYPE Release)
 
 set (ADDL_LINK_NAMES "")
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+if (UNIX AND NOT WIN32)
 	set (ADDL_LINK_NAMES "m")
 endif()
 
