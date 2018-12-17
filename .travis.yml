@@ -5,8 +5,9 @@ matrix:
   include:
   - os: linux
   compiler: gcc
+  compiler: clang
 
 script:
   - cmake .
-  - cmake --build . -- VERBOSE=1
+  - cmake --build .
   - ./gmsd_tests
