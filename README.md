@@ -5,7 +5,8 @@ https://github.com/clunietp/libgmsd
 Introduction
 ------------
 libgmsd is a C library and command-line tool for full-reference image quality assessment.
-Implements the Gradient Magnitude Similarity Deviation (GMSD) algorithm by Xue, Zhang, Mou, and Bovik.
+
+libgmsd is an implementation of the Gradient Magnitude Similarity Deviation (GMSD) algorithm by Xue, Zhang, Mou, and Bovik.
 http://www4.comp.polyu.edu.hk/~cslzhang/IQA/GMSD/GMSD.htm
 
 Features
@@ -18,20 +19,20 @@ Features
 
 Usage
 -----------------------
-- Library:			see include/libgmsd.h
-- Command line:		gmsd.exe "path/to/file1.bmp" "path/to/file2.bmp"   
+- Library:			see `include/libgmsd.h`
+- Command line:		`gmsd.exe "path/to/file1.bmp" "path/to/file2.bmp"`
 					Input:  24BPP BMP; Output:  GMSD value
-- Tests:			run_tests.exe
+- Tests:			`./gmsd_tests`
 
 Tested compilers:
 ------------
 - MSVC 2017
 - gcc 4.6
-- clang
+- clang 3.5
 
 Unit Tests ![Travis CI](https://travis-ci.org/clunietp/libgmsd.svg?branch=master)
 -------------
-- Tests/benchmark included in run_tests.exe
+- Tests/benchmark included in `/test/`
 
 Acknowledgements
 ---------
