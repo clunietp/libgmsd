@@ -6,7 +6,6 @@ set (TEST_NAME gmsd_tests)
 set (BIN_NAME gmsd)
 set (CMAKE_BUILD_TYPE Release)
 set (GCC_COVERAGE_LINK_FLAGS "-lm")
-set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
 project (${PROJECT_NAME})
 include_directories(include)
@@ -40,3 +39,5 @@ add_custom_command(
                 ${CMAKE_CURRENT_BINARY_DIR}				
 				)
 add_test( NAME ${TEST_NAME} COMMAND ${TEST_NAME} )
+
+set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
