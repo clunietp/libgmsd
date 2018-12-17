@@ -4,8 +4,12 @@ set (LIB_NAME libgmsd)
 set (LIB_TYPE STATIC)
 set (TEST_NAME gmsd_tests)
 set (BIN_NAME gmsd)
-set (ADDL_LINK_NAMES "m")
 set (CMAKE_BUILD_TYPE Release)
+
+set (ADDL_LINK_NAMES "")
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+	set (ADDL_LINK_NAMES "m")
+endif()
 
 project (${PROJECT_NAME})
 include_directories(include)
