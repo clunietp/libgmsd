@@ -8,5 +8,5 @@ matrix:
 
 script:
   - cmake ./
-  - make
+  - make VERBOSE=1
   - ./gmsd_tests

@@ -171,7 +171,7 @@ int main()
 	ftime(&stop);
 	diff_ms = (long)(stop.time - start.time) * 1000 + stop.millitm - start.millitm;
 
-	printf("complete.  Total %u ms, avg %f ms per run\n",
+	printf("complete.  Total %ld ms, avg %f ms per run\n",
 		diff_ms, diff_ms / (double)BENCHMARK_RUNS
 	);
 #else
