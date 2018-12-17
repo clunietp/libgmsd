@@ -3,10 +3,10 @@ dist: trusty
 
 matrix:
   include:
-  - os: linux
-  compiler: gcc
-  - os: linux
-  compiler: clang
+    - os: linux
+      compiler: gcc
+    - os: linux
+      compiler: clang
 
 script:
   - cmake .
