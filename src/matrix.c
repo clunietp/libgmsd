@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <assert.h>
-#include <math.h>
+#include <math.h>	/* sqrt, pow */
 #include <malloc.h>	/* _mm_malloc/_mm_free.   todo:  need more portable solution? */
 
 #define MALLOC_ALIGN_DEFAULT 16
@@ -456,7 +456,7 @@ void matrix_cwise_sqrt(matrix_t* out, const matrix_t* in) {
 		pSrc = matrix_crow(in, r);
 		pOut = matrix_row(out, r);
 		for (c = 0; c < matrix_cols(out); ++c, ++pSrc, ++pOut)
-			*pOut = sqrtf(*pSrc);
+			*pOut = (matrix_data_t)sqrt(*pSrc);
 	}
 }
 
