@@ -1,0 +1,26 @@
+language: c
+dist: trusty
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.9
+      - valgrind
+
+matrix:
+  include:
+    - os: linux # GCC 5
+      compiler: gcc
+      env: MATRIX_EVAL="CXX=gcc"
+    - os: linux # GCC 4.8
+      compiler: gcc
+    - os: linux
+      compiler: clang
+
+script:
+  - $CXX -v
+  - $CXX -Wall -I. test/main.c 3rdparty/bmpread.c -o main.t && ./main.t
+  - valgrind --leak-check=yes --error-exitcode=1 ./main.t
+  
