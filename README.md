@@ -36,4 +36,5 @@ Unit Tests ![Travis CI](https://travis-ci.org/clunietp/libgmsd.svg?branch=master
 Acknowledgements
 ---------
 http://www4.comp.polyu.edu.hk/~cslzhang/IQA/GMSD/GMSD.htm , Gradient Magnitude Similarity Deviation: A Highly Efficient Perceptual Image Quality Index by Xue, Zhang, Mou, Bovik
+
 https://github.com/chazomaticus/libbmpread , tiny, fast bitmap (.bmp) image file loader by Charles Lindsay.  Libbmpread is used in the test and command line apps for bmp input.

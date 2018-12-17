@@ -11,9 +11,6 @@ addons:
 
 matrix:
   include:
-    - os: linux # GCC 5
-      compiler: gcc
-      env: MATRIX_EVAL="CXX=gcc"
     - os: linux # GCC 4.8
       compiler: gcc
     - os: linux
