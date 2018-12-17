@@ -5,6 +5,8 @@ set (LIB_TYPE STATIC)
 set (TEST_NAME gmsd_tests)
 set (BIN_NAME gmsd)
 set (CMAKE_BUILD_TYPE Release)
+set (GCC_COVERAGE_LINK_FLAGS "-lm")
+set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
 project (${PROJECT_NAME})
 include_directories(include)

@@ -1,23 +1,19 @@
 language: c
 dist: trusty
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-4.9
-      - valgrind
+before_install:
+	- sudo apt-get update
+	- sudo apt-get install valgrind
 
 matrix:
   include:
-    - os: linux
+	- os: linux
       compiler: gcc
-    - os: linux
+	- os: linux
       compiler: clang
 
 script:
-  - $CC -v
-  - $CC -Wall -I. test/main.c 3rdparty/bmpread.c -o main.t && ./main.t
-  - valgrind --leak-check=yes --error-exitcode=1 ./main.t
+  - cmake ./
+  - make
+  - valgrind --leak-check=yes --error-exitcode=1 ./gmsd_tests
   
