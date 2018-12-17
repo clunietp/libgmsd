@@ -11,10 +11,12 @@ addons:
 
 matrix:
   include:
-    - os: linux # GCC 4.8
+    - os: linux
       compiler: gcc
+	  env: CXX=gcc
     - os: linux
       compiler: clang
+	  env: CXX=clang
 
 script:
   - $CXX -v
