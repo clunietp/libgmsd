@@ -1,6 +1,10 @@
 language: c
 dist: trusty
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install valgrind
+
 matrix:
   include:
     - os: linux
@@ -11,4 +15,4 @@ matrix:
 script:
   - cmake .
   - cmake --build .
-  - ./gmsd_tests
+  - valgrind --leak-check=yes --error-exitcode=1 ./gmsd_tests

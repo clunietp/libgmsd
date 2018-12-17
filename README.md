@@ -28,7 +28,7 @@ Tested compilers:
 ------------
 - MSVC 2017
 - gcc 4.6
-- clang 3.5
+- clang 5
 
 Unit Tests ![Travis CI](https://travis-ci.org/clunietp/libgmsd.svg?branch=master)
 -------------
