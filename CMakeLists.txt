@@ -4,8 +4,8 @@ set (LIB_NAME libgmsd)
 set (LIB_TYPE STATIC)
 set (TEST_NAME gmsd_tests)
 set (BIN_NAME gmsd)
+set (ADDL_LINK_NAMES "m")
 set (CMAKE_BUILD_TYPE Release)
-set (GCC_COVERAGE_LINK_FLAGS "-lm")
 
 project (${PROJECT_NAME})
 include_directories(include)
@@ -21,7 +21,7 @@ add_library(${LIB_NAME} ${LIB_TYPE} ${LIB_SOURCES})
 # EXE
 file(GLOB BIN_SOURCES "bin/*.c")
 add_executable(${BIN_NAME} ${BIN_SOURCES} ${3RDPARTY_SOURCES})
-target_link_libraries( ${BIN_NAME} ${LIB_NAME} )
+target_link_libraries( ${BIN_NAME} ${LIB_NAME} ${ADDL_LINK_NAMES} )
 
 # CTEST APP
 enable_testing()
@@ -30,7 +30,7 @@ file(GLOB TEST_SOURCES "test/*.c")
 file(GLOB TEST_FILES "test/*.bmp")
   
 add_executable(${TEST_NAME} ${TEST_SOURCES} ${3RDPARTY_SOURCES})
-target_link_libraries( ${TEST_NAME} ${LIB_NAME} )
+target_link_libraries( ${TEST_NAME} ${LIB_NAME} ${ADDL_LINK_NAMES} )
 
 add_custom_command(
         TARGET ${TEST_NAME} POST_BUILD
@@ -39,5 +39,3 @@ add_custom_command(
                 ${CMAKE_CURRENT_BINARY_DIR}				
 				)
 add_test( NAME ${TEST_NAME} COMMAND ${TEST_NAME} )
-
-set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
