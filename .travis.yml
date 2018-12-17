@@ -14,5 +14,5 @@ matrix:
 
 script:
   - cmake .
-  - cmake --build .
+  - cmake --build . -- VERBOSE=1
   - valgrind --leak-check=yes --error-exitcode=1 ./gmsd_tests
