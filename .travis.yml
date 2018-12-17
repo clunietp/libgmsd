@@ -13,13 +13,11 @@ matrix:
   include:
     - os: linux
       compiler: gcc
-	  env: CXX=gcc
     - os: linux
       compiler: clang
-	  env: CXX=clang
 
 script:
-  - $CXX -v
-  - $CXX -Wall -I. test/main.c 3rdparty/bmpread.c -o main.t && ./main.t
+  - $CC -v
+  - $CC -Wall -I. test/main.c 3rdparty/bmpread.c -o main.t && ./main.t
   - valgrind --leak-check=yes --error-exitcode=1 ./main.t
   
