@@ -7,6 +7,6 @@ matrix:
   compiler: gcc
 
 script:
-  - cmake ./
+  - cmake -DCMAKE_EXE_LINKER_FLAGS=-lm .
   - cmake --build . -- VERBOSE=1
   - ./gmsd_tests
