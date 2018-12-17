@@ -3,12 +3,10 @@ dist: trusty
 
 matrix:
   include:
-	- os: linux
-      compiler: gcc
+  - os: linux
+  compiler: gcc
 
 script:
   - cmake ./
   - make
   - ./gmsd_tests
-
-  
