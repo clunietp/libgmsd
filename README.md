@@ -21,7 +21,8 @@ Usage
 -----------------------
 - Library:			see `include/libgmsd.h`
 - Command line:		`gmsd.exe "path/to/file1.bmp" "path/to/file2.bmp"`
-					Input:  24BPP BMP; Output:  GMSD value
+  * Input:  24BPP BMP; Output:  GMSD value					
+  * Win32 command line binary:  https://github.com/clunietp/libgmsd/raw/master/gmsd_win32.zip
 - Tests:			`./gmsd_tests`
 
 Tested compilers:
